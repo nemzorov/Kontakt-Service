@@ -1,0 +1,254 @@
+@import "_settings";
+
+.header {
+    // -------------------- Фиксированный header --------------------
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    box-shadow: 0px $shadowHeightHeader $shadowBlurHeader $shadowIncreaseHeader $shadowColorHeader;
+    // --------------------------------------------------------------
+    // ------------------------- Фон header -------------------------
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $bgColorHeader;
+        z-index: 2;
+    }
+    // -------------------------------------------------------------
+
+    &__body {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: $sizeHeader;
+
+        @media (max-width: $pc) {
+            height: 65px;
+        }
+
+        @media (max-width: $mobile) {
+            height: 60px;
+        }
+    }
+
+    &__logo {
+        // --------------------- Настройки лого ----------------------
+        position: relative;
+        @if $showLogoHeader == no {
+            // Если будет no, то логотип будет скрыт
+            display: none;
+        }
+        flex: 0 0 $sizeLogo; // устанавливаем размер лого
+        border-radius: $borderLogoHeader; // делаем лого в виде круга
+        overflow: hidden; // скрываем все что выходит за рамки круга
+        z-index: 3;
+
+        img {
+            max-width: 100%; // размер лого подстраивается
+            display: block; //сглаживает лого
+        }
+        // ----------------------------------------------------------
+    }
+
+    &__burger {
+        order: 3;
+        z-index: 3;
+    }
+
+    &__connection {
+    }
+
+    &__menu {
+        @media (max-width: $selectDevice) {
+            position: fixed;
+            overflow: auto;
+
+            // ----------- Menu Burger Exit Side -----------
+            @if $menuExitSide == top {
+                top: -100%;
+                left: 0;
+            } @else if $menuExitSide == bottom {
+                bottom: -100%;
+                left: 0;
+            } @else if $menuExitSide == left {
+                left: -100%;
+                top: 0;
+            } @else if $menuExitSide == right {
+                right: -100%;
+                top: 0;
+            } @else {
+                top: -100%;
+                left: 0;
+            }
+            // ============================================
+
+            width: 100%; // меню бургера на всю ширину экрана
+            height: 100%; // меню бургера на всю высоту экрана
+            background-color: $bgColorBurgerMenu;
+            text-align: $textAlignBurgerMenu;
+            transition: all 0.1 * $speedExitMenuBurger + s ease 0s;
+
+            &.open {
+                // --------- Сторона вылета меню бургер ---------
+                @if $menuExitSide == top {
+                    top: 0;
+                } @else if $menuExitSide == bottom {
+                    bottom: 0;
+                } @else if $menuExitSide == left {
+                    left: 0;
+                } @else if $menuExitSide == right {
+                    right: 0;
+                } @else {
+                    top: 0;
+                }
+                // ============================================
+            }
+        }
+    }
+
+    // ---------------- Настройка пунктов меню ----------------
+    &__list {
+        display: flex;
+        position: relative;
+        z-index: 3;
+
+        li {
+            padding: 0px 0px 0px $paddingTextMenu;
+            &:first-child {
+                padding: 0px 0px 0px 0px; // Удаление отступа у первого пункта меню
+            }
+        }
+
+        @media (max-width: $selectDevice) {
+            display: block;
+
+            margin: $sizeHeader + $marginTopMenu 0px 0px 0px;
+
+            li {
+                padding: $paddingTextBurgerMenu 10px;
+                &:first-child {
+                    padding: $paddingTextBurgerMenu 10px; // Удаление отступа у первого пункта меню
+                }
+            }
+        }
+    }
+
+    &__link {
+        color: $colorMenu;
+        font-size: $fontSizeMenu;
+        text-transform: $textTransformMenu;
+        opacity: 0.9;
+        transition: color 0.5s ease 0s;
+        line-height: 22px;
+
+        &:hover {
+            color: #fff;
+            text-shadow: 0px 0px 1px rgb(255, 255, 255);
+        }
+
+        @media (max-width: $pc) {
+            font-size: 14px;
+        }
+
+        @media (max-width: $selectDevice) {
+            display: block;
+            color: $colorBurgerMenu;
+            // font-size: $fontSizeBurgerMenu;
+            @include adaptiv-font(50, 30);
+            text-transform: $textTransformBurgerMenu;
+            line-height: 50px;
+            padding: 5px 0px;
+        }
+    }
+
+    &__button {
+        order: 2;
+        z-index: 3;
+        background-color: #ff6928;
+        @include changeBgColorButton(#ff5328, #ad4113);
+
+        @media (max-width: $pc) {
+            flex-basis: 150px;
+            padding: 15px 10px;
+            font-size: 13px;
+        }
+
+        @media (max-width: $mobile) {
+            flex-basis: 140px;
+            padding: 13px 8px;
+            & span {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: $mobileSmall) {
+            flex-basis: 120px;
+            padding: 12px 6px;
+            & span {
+                font-size: 11px;
+            }
+        }
+    }
+    // -------------------------------------------------------
+}
+
+.connection {
+    display: flex;
+    z-index: 3;
+
+    .animation {
+        transform: rotate(5deg);
+    }
+    &__logo {
+        padding: 0px 15px 0px 0px;
+
+        & img {
+            @media (max-width: $mobile) {
+                width: 35px;
+            }
+        }
+    }
+
+    &__phone {
+        color: #eeeeee;
+        font-size: 25px;
+        font-weight: 600;
+
+        @media (max-width: $pc) {
+            font-size: 20px;
+            line-height: 26px;
+        }
+        @media (max-width: $mobile) {
+            display: none;
+        }
+    }
+
+    &__link {
+    }
+
+    &__text {
+        color: #db3228;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 19px;
+        text-align: end;
+        text-transform: lowercase;
+        letter-spacing: 0.07em;
+        text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.25);
+        @media (max-width: $pc) {
+            font-size: 12px;
+            line-height: 15px;
+        }
+
+        @media (max-width: $mobile) {
+            display: none;
+        }
+    }
+}

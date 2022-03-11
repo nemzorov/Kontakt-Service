@@ -1,0 +1,37 @@
+// =======================================-CONTAINER-======================================
+@import "../_settings";
+
+[class*="__container"] {
+    max-width: $containerWidth;
+    margin: 0px auto;
+    padding: 0px $containerPadding;
+}
+
+/* PC */
+@media (max-width: $pc) {
+    [class*="__container"] {
+        max-width: 970px;
+    }
+}
+
+/* TABLET */
+@media (max-width: $tablet) {
+    [class*="__container"] {
+        max-width: 780px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: $mobile) {
+    [class*="__container"] {
+        max-width: none;
+    }
+}
+
+/* MOBILE SMALL*/
+@media (max-width: $mobileSmall) {
+    [class*="__container"] {
+        max-width: none;
+    }
+}
+// =======================================-CONTAINER-======================================

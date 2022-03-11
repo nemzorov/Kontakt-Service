@@ -1,0 +1,852 @@
+@import "../_settings";
+
+// -------------------- burger_1 --------------------
+%burger_1 {
+    font-size: $sizehBurger;
+    width: 1em;
+    height: 0.75em;
+    position: relative;
+    transform: rotate(0deg);
+    @if $speed == 1 {
+        transition: 0.9s ease-in-out;
+    } @else if $speed == 2 {
+        transition: 0.7s ease-in-out;
+    } @else if $speed == 3 {
+        transition: 0.5s ease-in-out;
+    } @else if $speed == 4 {
+        transition: 0.3s ease-in-out;
+    } @else {
+        transition: 0.5s ease-in-out;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    & span {
+        display: block;
+        position: absolute;
+
+        @if $weightBurger == 400 {
+            height: 0.05em;
+        } @else if $weightBurger == 700 {
+            height: 0.1em;
+        } @else if $weightBurger == 900 {
+            height: 0.15em;
+        } @else {
+            height: 0.15em;
+        }
+
+        width: 100%;
+        background: #000;
+        background: $colorBurger;
+        border-radius: 0.15em;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        @if $speed == 1 {
+            transition: 0.75s ease-in-out;
+        } @else if $speed == 2 {
+            transition: 0.55s ease-in-out;
+        } @else if $speed == 3 {
+            transition: 0.25s ease-in-out;
+        } @else if $speed == 4 {
+            transition: 0.05s ease-in-out;
+        } @else {
+            transition: 0.25s ease-in-out;
+        }
+    }
+    & span:nth-child(1) {
+        top: 0px;
+    }
+    & span:nth-child(2),
+    & span:nth-child(3) {
+        top: 0.3em;
+    }
+    & span:nth-child(4) {
+        top: 0.6em;
+    }
+    &.open span:nth-child(1) {
+        top: 0.3em;
+        width: 0%;
+        left: 50%;
+    }
+    &.open span:nth-child(2) {
+        transform: rotate(45deg);
+    }
+    &.open span:nth-child(3) {
+        transform: rotate(-45deg);
+    }
+    &.open span:nth-child(4) {
+        top: 0.3em;
+        width: 0%;
+        left: 50%;
+    }
+}
+
+// -------------------- burger_2 --------------------
+%burger_2 {
+    font-size: $sizehBurger;
+    width: 1em;
+    height: 0.75em;
+    position: relative;
+    transform: rotate(0deg);
+    @if $speed == 1 {
+        transition: 0.9s ease-in-out;
+    } @else if $speed == 2 {
+        transition: 0.7s ease-in-out;
+    } @else if $speed == 3 {
+        transition: 0.5s ease-in-out;
+    } @else if $speed == 4 {
+        transition: 0.3s ease-in-out;
+    } @else {
+        transition: 0.5s ease-in-out;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    & span {
+        display: block;
+        position: absolute;
+        // height: 0.15em;
+        @if $weightBurger == 400 {
+            height: 0.05em;
+        } @else if $weightBurger == 700 {
+            height: 0.1em;
+        } @else if $weightBurger == 900 {
+            height: 0.15em;
+        } @else {
+            height: 0.15em;
+        }
+        width: 100%;
+        background: #000;
+        background: $colorBurger;
+        border-radius: 0.15em;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        @if $speed == 1 {
+            transition: 0.75s ease-in-out;
+        } @else if $speed == 2 {
+            transition: 0.55s ease-in-out;
+        } @else if $speed == 3 {
+            transition: 0.25s ease-in-out;
+        } @else if $speed == 4 {
+            transition: 0.05s ease-in-out;
+        } @else {
+            transition: 0.25s ease-in-out;
+        }
+    }
+    & span:nth-child(1) {
+        top: 0px;
+    }
+    & span:nth-child(2) {
+        top: 0.3em;
+    }
+    & span:nth-child(3) {
+        top: 0.6em;
+    }
+    &.open span:nth-child(1) {
+        top: 0.3em;
+        @if $side == left {
+            transform: rotate(135deg);
+        } @else if $side == right {
+            transform: rotate(-135deg);
+        } @else {
+            transform: rotate(135deg);
+        }
+    }
+
+    &.open span:nth-child(2) {
+        opacity: 0;
+        @if $side == left {
+            left: -1em;
+        } @else if $side == right {
+            left: 1em;
+        } @else {
+            left: -1em;
+        }
+    }
+
+    &.open span:nth-child(3) {
+        top: 0.3em;
+        @if $side == left {
+            transform: rotate(-135deg);
+        } @else if $side == right {
+            transform: rotate(135deg);
+        } @else {
+            transform: rotate(-135deg);
+        }
+    }
+}
+
+// -------------------- burger_3 --------------------
+%burger_3 {
+    font-size: $sizehBurger;
+    width: 1em;
+    height: 0.75em;
+    position: relative;
+    transform: rotate(0deg);
+    @if $speed == 1 {
+        transition: 0.9s ease-in-out;
+    } @else if $speed == 2 {
+        transition: 0.7s ease-in-out;
+    } @else if $speed == 3 {
+        transition: 0.5s ease-in-out;
+    } @else if $speed == 4 {
+        transition: 0.3s ease-in-out;
+    } @else {
+        transition: 0.5s ease-in-out;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    & span {
+        display: block;
+        position: absolute;
+        // height: 0.15em;
+
+        @if $weightBurger == 400 {
+            height: 0.05em;
+        } @else if $weightBurger == 700 {
+            height: 0.1em;
+        } @else if $weightBurger == 900 {
+            height: 0.15em;
+        } @else {
+            height: 0.15em;
+        }
+
+        width: 50%;
+        background: #000;
+        background: $colorBurger;
+        border-radius: 0.15em;
+        opacity: 1;
+        transform: rotate(0deg);
+        @if $speed == 1 {
+            transition: 0.75s ease-in-out;
+        } @else if $speed == 2 {
+            transition: 0.55s ease-in-out;
+        } @else if $speed == 3 {
+            transition: 0.25s ease-in-out;
+        } @else if $speed == 4 {
+            transition: 0.05s ease-in-out;
+        } @else {
+            transition: 0.25s ease-in-out;
+        }
+    }
+
+    & span:nth-child(even) {
+        left: 50%;
+        border-radius: 0 0.15em 0.15em 0;
+    }
+    & span:nth-child(odd) {
+        left: 0px;
+        border-radius: 0.15em 0 0 0.15em;
+    }
+    & span:nth-child(1),
+    & span:nth-child(2) {
+        top: 0px;
+    }
+    & span:nth-child(3),
+    & span:nth-child(4) {
+        top: 0.3em;
+    }
+    & span:nth-child(5),
+    & span:nth-child(6) {
+        top: 0.6em;
+    }
+    &.open span:nth-child(1),
+    &.open span:nth-child(6) {
+        transform: rotate(45deg);
+    }
+    &.open span:nth-child(2),
+    &.open span:nth-child(5) {
+        transform: rotate(-45deg);
+    }
+    &.open span:nth-child(1) {
+        left: 0.083em;
+        top: 0.117em;
+    }
+    &.open span:nth-child(2) {
+        left: calc(50% - 0.083em);
+        top: 0.117em;
+    }
+    &.open span:nth-child(3) {
+        left: -50%;
+        opacity: 0;
+    }
+    &.open span:nth-child(4) {
+        left: 100%;
+        opacity: 0;
+    }
+    &.open span:nth-child(5) {
+        left: 0.083em;
+        top: 0.483em;
+    }
+    &.open span:nth-child(6) {
+        left: calc(50% - 0.083em);
+        top: 0.483em;
+    }
+}
+
+// -------------------- burger_4 --------------------
+%burger_4 {
+    font-size: $sizehBurger;
+    width: 1em;
+    height: 0.75em;
+    position: relative;
+    transform: rotate(0deg);
+    @if $speed == 1 {
+        transition: 0.9s ease-in-out;
+    } @else if $speed == 2 {
+        transition: 0.7s ease-in-out;
+    } @else if $speed == 3 {
+        transition: 0.5s ease-in-out;
+    } @else if $speed == 4 {
+        transition: 0.3s ease-in-out;
+    } @else {
+        transition: 0.5s ease-in-out;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    & span {
+        display: block;
+        position: absolute;
+
+        @if $weightBurger == 400 {
+            height: 0.05em;
+        } @else if $weightBurger == 700 {
+            height: 0.1em;
+        } @else if $weightBurger == 900 {
+            height: 0.15em;
+        } @else {
+            height: 0.15em;
+        }
+
+        width: 100%;
+        background: #000;
+        background: $colorBurger;
+        border-radius: 0.15em;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        @if $speed == 1 {
+            transition: 0.75s ease-in-out;
+        } @else if $speed == 2 {
+            transition: 0.55s ease-in-out;
+        } @else if $speed == 3 {
+            transition: 0.25s ease-in-out;
+        } @else if $speed == 4 {
+            transition: 0.05s ease-in-out;
+        } @else {
+            transition: 0.25s ease-in-out;
+        }
+    }
+
+    & span:nth-child(1) {
+        top: 0px;
+        @if $side == right {
+            transform-origin: left center;
+        } @else if $side == left {
+            transform-origin: right center;
+        } @else {
+            transform-origin: left center;
+        }
+    }
+    & span:nth-child(2) {
+        top: 0.3em;
+        @if $side == right {
+            transform-origin: left center;
+        } @else if $side == left {
+            transform-origin: right center;
+        } @else {
+            transform-origin: left center;
+        }
+    }
+    & span:nth-child(3) {
+        top: 0.6em;
+        @if $side == right {
+            transform-origin: left center;
+        } @else if $side == left {
+            transform-origin: right center;
+        } @else {
+            transform-origin: left center;
+        }
+    }
+    &.open span:nth-child(1) {
+        @if $side == right {
+            transform: rotate(45deg);
+        } @else if $side == left {
+            transform: rotate(-45deg);
+        } @else {
+            transform: rotate(45deg);
+        }
+        top: -0.05em;
+
+        @if $side == left {
+            left: -0.133em;
+        } @else if $side == right {
+            left: 0.133em;
+        } @else {
+            left: -0.133em;
+        }
+    }
+
+    &.open span:nth-child(2) {
+        width: 0%;
+        opacity: 0;
+    }
+
+    &.open span:nth-child(3) {
+        @if $side == right {
+            transform: rotate(-45deg);
+        } @else if $side == left {
+            transform: rotate(45deg);
+        } @else {
+            transform: rotate(-45deg);
+        }
+        top: 0.65em;
+
+        @if $side == left {
+            left: -0.133em;
+        } @else if $side == right {
+            left: 0.133em;
+        } @else {
+            left: -0.133em;
+        }
+    }
+}
+
+// -------------------- burger_5 --------------------
+%burger_5 {
+    font-size: $sizehBurger;
+    width: 1em;
+    height: 0.75em;
+    position: relative;
+    @if $speed == 1 {
+        transition-duration: 1.5s;
+    } @else if $speed == 2 {
+        transition-duration: 1.3s;
+    } @else if $speed == 3 {
+        transition-duration: 1s;
+    } @else if $speed == 4 {
+        transition-duration: 0.7s;
+    } @else {
+        transition-duration: 1s;
+    }
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: -47%;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    & span {
+        position: absolute;
+
+        @if $weightBurger == 400 {
+            height: 0.05em;
+        } @else if $weightBurger == 700 {
+            height: 0.1em;
+        } @else if $weightBurger == 900 {
+            height: 0.15em;
+        } @else {
+            height: 0.15em;
+        }
+
+        width: 1em;
+        background: #000;
+        background: $colorBurger;
+        border-radius: 0.15em;
+        @if $speed == 1 {
+            transition-duration: 0.5s;
+            transition-delay: 0.5s;
+        } @else if $speed == 2 {
+            transition-duration: 0.5s;
+            transition-delay: 0.45s;
+        } @else if $speed == 3 {
+            transition-duration: 0.25s;
+            transition-delay: 0.2s;
+        } @else if $speed == 4 {
+            transition-duration: 0.12s;
+            transition-delay: 0.12s;
+        } @else {
+            transition-duration: 0.25s;
+            transition-delay: 0.2s;
+        }
+    }
+    & span::before {
+        left: 0;
+        position: absolute;
+        top: -0.3em;
+        @if $weightBurger == 400 {
+            height: 0.05em;
+        } @else if $weightBurger == 700 {
+            height: 0.1em;
+        } @else if $weightBurger == 900 {
+            height: 0.15em;
+        } @else {
+            height: 0.15em;
+        }
+        width: 1em;
+        background: #000;
+        background: $colorBurger;
+        content: "";
+        border-radius: 0.333em;
+
+        @if $speed == 1 {
+            transition-duration: 0.75s;
+            transition: transform 0.75s, top 0.75s 0.75s;
+        } @else if $speed == 2 {
+            transition-duration: 0.55s;
+            transition: transform 0.55s, top 0.55s 0.55s;
+        } @else if $speed == 3 {
+            transition-duration: 0.25s;
+            transition: transform 0.25s, top 0.25s 0.25s;
+        } @else if $speed == 4 {
+            transition-duration: 0.15s;
+            transition: transform 0.15s, top 0.15s 0.15s;
+        } @else {
+            transition-duration: 0.25s;
+            transition: transform 0.25s, top 0.25s 0.25s;
+        }
+    }
+    & span::after {
+        left: 0;
+        position: absolute;
+        top: 0.3em;
+        @if $weightBurger == 400 {
+            height: 0.05em;
+        } @else if $weightBurger == 700 {
+            height: 0.1em;
+        } @else if $weightBurger == 900 {
+            height: 0.15em;
+        } @else {
+            height: 0.15em;
+        }
+        width: 1em;
+        background: #000;
+        background: $colorBurger;
+        content: "";
+        border-radius: 0.333em;
+
+        @if $speed == 1 {
+            transition-duration: 0.75s;
+            transition: transform 0.75s, top 0.75s 0.75s;
+        } @else if $speed == 2 {
+            transition-duration: 0.55s;
+            transition: transform 0.55s, top 0.55s 0.55s;
+        } @else if $speed == 3 {
+            transition-duration: 0.25s;
+            transition: transform 0.25s, top 0.25s 0.25s;
+        } @else if $speed == 4 {
+            transition-duration: 0.15s;
+            transition: transform 0.15s, top 0.15s 0.15s;
+        } @else {
+            transition-duration: 0.25s;
+            transition: transform 0.25s, top 0.25s 0.25s;
+        }
+    }
+    // +++++++++++++++++++++++++++++++++++
+    &.open span {
+        transition-duration: 0.1s;
+        transition-delay: 0.25s;
+
+        @if $speed == 1 {
+            transition-duration: 1.3s;
+            transition-delay: 0.6s;
+        } @else if $speed == 2 {
+            transition-duration: 1s;
+            transition-delay: 0.3s;
+        } @else if $speed == 3 {
+            transition-duration: 0.5s;
+            transition-delay: 0.2s;
+        } @else if $speed == 4 {
+            transition-duration: 0.4s;
+            transition-delay: 0.1s;
+        } @else {
+            transition-duration: 0.5s;
+            transition-delay: 0.2s;
+        }
+
+        background: transparent;
+    }
+    &.open span::before {
+        @if $speed == 1 {
+            transition: top 0.6s, transform 0.4s 0.4s;
+        } @else if $speed == 2 {
+            transition: top 0.35s, transform 0.35s 0.35s;
+        } @else if $speed == 3 {
+            transition: top 0.25s, transform 0.25s 0.25s;
+        } @else if $speed == 4 {
+            transition: top 0.12s, transform 0.12s 0.12s;
+        } @else {
+            transition: top 0.25s, transform 0.25s 0.25s;
+        }
+        top: 0px;
+        transform: rotateZ(-45deg);
+    }
+    &.open span::after {
+        @if $speed == 1 {
+            transition: top 0.6s, transform 0.4s 0.4s;
+        } @else if $speed == 2 {
+            transition: top 0.5s, transform 0.35s 0.35s;
+        } @else if $speed == 3 {
+            transition: top 0.4s, transform 0.25s 0.25s;
+        } @else if $speed == 4 {
+            transition: top 0.2s, transform 0.12s 0.12s;
+        } @else {
+            transition: top 0.4s, transform 0.25s 0.25s;
+        }
+
+        top: 0px;
+        transform: rotateZ(45deg);
+    }
+}
+
+// -------------------- burger_6 --------------------
+%burger_6 {
+    font-size: $sizehBurger;
+    width: 1em;
+    height: 0.75em;
+    position: relative;
+    @if $speed == 1 {
+        transition-duration: 1.6s;
+    } @else if $speed == 2 {
+        transition-duration: 1.3s;
+    } @else if $speed == 3 {
+        transition-duration: 1s;
+    } @else if $speed == 4 {
+        transition-duration: 0.7s;
+    } @else {
+        transition-duration: 1s;
+    }
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: -47%;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    & span {
+        position: absolute;
+
+        @if $weightBurger == 400 {
+            height: 0.05em;
+        } @else if $weightBurger == 700 {
+            height: 0.1em;
+        } @else if $weightBurger == 900 {
+            height: 0.15em;
+        } @else {
+            height: 0.15em;
+        }
+
+        width: 1em;
+        background: #000;
+        background: $colorBurger;
+        border-radius: 0.15em;
+        @if $speed == 1 {
+            transition-duration: 0.75s;
+        } @else if $speed == 2 {
+            transition-duration: 0.5s;
+        } @else if $speed == 3 {
+            transition-duration: 0.25s;
+        } @else if $speed == 4 {
+            transition-duration: 0.15s;
+        } @else {
+            transition-duration: 0.25s;
+        }
+    }
+    & span::before {
+        left: 0;
+        position: absolute;
+        top: -0.3em;
+        @if $weightBurger == 400 {
+            height: 0.05em;
+        } @else if $weightBurger == 700 {
+            height: 0.1em;
+        } @else if $weightBurger == 900 {
+            height: 0.15em;
+        } @else {
+            height: 0.15em;
+        }
+        width: 1em;
+        background: #000;
+        background: $colorBurger;
+        content: "";
+        border-radius: 0.333em;
+
+        @if $speed == 1 {
+            transition-duration: 0.75s;
+        } @else if $speed == 2 {
+            transition-duration: 0.5s;
+        } @else if $speed == 3 {
+            transition-duration: 0.25s;
+        } @else if $speed == 4 {
+            transition-duration: 0.15s;
+        } @else {
+            transition-duration: 0.25s;
+        }
+    }
+    & span::after {
+        left: 0;
+        position: absolute;
+        top: 0.3em;
+        @if $weightBurger == 400 {
+            height: 0.05em;
+        } @else if $weightBurger == 700 {
+            height: 0.1em;
+        } @else if $weightBurger == 900 {
+            height: 0.15em;
+        } @else {
+            height: 0.15em;
+        }
+        width: 1em;
+        background: #000;
+        background: $colorBurger;
+        content: "";
+        border-radius: 0.333em;
+
+        @if $speed == 1 {
+            transition-duration: 0.75s;
+        } @else if $speed == 2 {
+            transition-duration: 0.5s;
+        } @else if $speed == 3 {
+            transition-duration: 0.25s;
+        } @else if $speed == 4 {
+            transition-duration: 0.15s;
+        } @else {
+            transition-duration: 0.25s;
+        }
+    }
+
+    &.open span {
+        background: transparent;
+    }
+    &.open span::before {
+        @if $speed == 1 {
+            transition: transform 0.75s;
+        } @else if $speed == 2 {
+            transition: transform 0.5s;
+        } @else if $speed == 3 {
+            transition: transform 0.25s;
+        } @else if $speed == 4 {
+            transition: transform 0.15s;
+        } @else {
+            transition: transform 0.25s;
+        }
+        @if $side == left {
+            transform: rotateZ(-45deg);
+        } @else if $side == right {
+            transform: rotateZ(45deg);
+        } @else {
+            transform: rotateZ(-45deg);
+        }
+        top: 0;
+    }
+    &.open span::after {
+        @if $speed == 1 {
+            transition: transform 0.75s;
+        } @else if $speed == 2 {
+            transition: transform 0.5s;
+        } @else if $speed == 3 {
+            transition: transform 0.25s;
+        } @else if $speed == 4 {
+            transition: transform 0.15s;
+        } @else {
+            transition: transform 0.25s;
+        }
+        @if $side == left {
+            transform: rotateZ(405deg);
+        } @else if $side == right {
+            transform: rotateZ(-405deg);
+        } @else {
+            transform: rotateZ(405deg);
+        }
+        top: 0;
+    }
+}
+// ==================================================
+
+// -------------------- THE BURGER ----------------------
+.burger {
+    // ----------- select burgers for device ------------
+
+    display: none;
+
+    @media (max-width: $selectDevice) {
+        display: block;
+        position: relative;
+        z-index: 2;
+
+        @if $weightBurger == 400 {
+            top: 0.05em;
+        } @else if $weightBurger == 700 {
+            top: 0.1em;
+        } @else if $weightBurger == 900 {
+            top: 0.15em;
+        } @else {
+            top: 0.15em;
+        }
+    }
+
+    // ==================================================
+
+    // -------- select device to show the burger --------
+
+    @if $selectBurger == 1 {
+        @extend %burger_1;
+    } @else if $selectBurger == 2 {
+        @extend %burger_2;
+    } @else if $selectBurger == 3 {
+        @extend %burger_3;
+    } @else if $selectBurger == 4 {
+        @extend %burger_4;
+    } @else if $selectBurger == 5 {
+        @extend %burger_5;
+    } @else if $selectBurger == 6 {
+        @extend %burger_6;
+    } @else {
+        @extend %burger_1;
+    }
+}
+// ==================================================

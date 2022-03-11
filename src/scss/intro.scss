@@ -1,0 +1,68 @@
+@import "_settings";
+
+.intro {
+    overflow: hidden;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    align-items: center;
+    &__title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        // padding: 25% 0px;
+        text-align: center;
+    }
+
+    &__logo {
+        & img {
+            width: 800px;
+            @media (max-width: $pc) {
+                width: 700px;
+            }
+            @media (max-width: $tablet) {
+                width: 100%;
+            }
+        }
+    }
+
+    &__text {
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        @include adaptiv-font(25, 12);
+        line-height: 150%;
+        font-weight: 500;
+        padding: 0px 0px 5vh 0px;
+
+        @media (max-width: $mobileSmall) {
+            padding: 0px 0px 25px 0px;
+        }
+    }
+
+    &__button {
+        flex: 0 0 auto;
+        background-color: #ee4a39;
+        padding: 20px 15px;
+        @include changeBgColorButton(#f82e27, #852015);
+        @media (max-width: $pc) {
+            padding: 18px 12px;
+            font-size: 13px;
+        }
+
+        @media (max-width: $mobile) {
+            padding: 15px 10px;
+            & span {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: $mobileSmall) {
+            padding: 12px 8px;
+            & span {
+                font-size: 11px;
+            }
+        }
+    }
+}
