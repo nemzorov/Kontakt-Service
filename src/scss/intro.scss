@@ -45,7 +45,7 @@
         flex: 0 0 auto;
         background-color: #ee4a39;
         padding: 20px 15px;
-        @include changeBgColorButton(#f82e27, #852015);
+        @include changeBgColorButton(#ee4a39, #eb3b27, #ad2c1d);
         @media (max-width: $pc) {
             padding: 18px 12px;
             font-size: 13px;

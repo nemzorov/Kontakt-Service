@@ -128,8 +128,6 @@
 
     &__button {
         padding: 15px 20px;
+        @include changeBgColorButton(#ee4a39, #eb3b27, #ad2c1d);
     }
-}
-.button {
-    background-color: #ee4a39;
 }

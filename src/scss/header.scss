@@ -171,8 +171,7 @@
     &__button {
         order: 2;
         z-index: 3;
-        background-color: #ff6928;
-        @include changeBgColorButton(#ff5328, #ad4113);
+        @include changeBgColorButton(#ff6928, #dd4421, #b84e36);
 
         @media (max-width: $pc) {
             flex-basis: 150px;

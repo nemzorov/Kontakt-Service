@@ -1,0 +1,104 @@
+.benefit {
+    background-color: #ffc061;
+    padding: 70px 0px;
+    box-shadow: 0px 0px 10px 5px rgb(0 0 0 / 25%);
+
+    @media (max-width: $mobile) {
+        padding: 0px;
+    }
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+        background: #ffc369;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        padding: 27px 112px 67px;
+
+        @media (max-width: 1233.99px) {
+            padding: 25px 60px 40px;
+        }
+
+        @media (max-width: $pc) {
+            padding: 25px 15px 40px;
+        }
+
+        @media (max-width: $tablet) {
+            padding: 25px 0px 40px;
+        }
+
+        @media (max-width: $mobile) {
+            background: inherit;
+            box-shadow: none;
+            border-radius: 0px;
+        }
+    }
+
+    &__title {
+        align-self: center;
+        padding: 0px 22px;
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        margin: 0px 0px 40px 0px;
+
+        font-style: normal;
+        font-weight: 500;
+        @include adaptiv-font(30, 18);
+        line-height: 43px;
+
+        @media (max-width: $mobile) {
+            margin: 0px 0px 20px 0px;
+        }
+    }
+
+    &__items {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        @media (max-width: $mobile) {
+            flex-wrap: nowrap;
+            overflow: auto;
+            justify-content: left;
+        }
+    }
+
+    &__item {
+        width: 300px;
+        background: rgba(255, 255, 255, 0.7);
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+        border-radius: 20px;
+        text-transform: uppercase;
+        margin: 10px;
+
+        @media (max-width: $pc) {
+            width: 276px;
+        }
+
+        @media (max-width: $mobile) {
+            flex: 0 0 85%;
+        }
+    }
+}
+.item-benefit {
+    &__image {
+        width: 200px;
+        margin: 20px auto;
+
+        & img {
+            min-width: 100%;
+        }
+    }
+
+    &__text {
+        margin: 20px 0px 0px 0px;
+        padding: 18px 12px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 26px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
