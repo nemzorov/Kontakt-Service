@@ -126,6 +126,20 @@
         }
     }
 
+    &__policy {
+        @include adaptiv-font(10, 8);
+        font-style: oblique;
+        text-align: left;
+        align-self: flex-start;
+        & a {
+            color: #2333be;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
     &__button {
         padding: 15px 20px;
         @include changeBgColorButton(#ee4a39, #eb3b27, #ad2c1d);
