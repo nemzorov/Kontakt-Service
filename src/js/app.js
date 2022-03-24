@@ -36,3 +36,14 @@ function runAnimat() {
 
 setInterval(() => runAnimat(), 3000);
 // ==================== Animation phone ====================
+
+
+// ======================== Spollers =======================
+const spolersTitle = document.querySelectorAll('.block-footer');
+
+for (let p of spolersTitle) {
+    p.addEventListener('click', function (e) {
+        this.classList.toggle('open')
+    });
+};
+// ======================== Spollers =======================
