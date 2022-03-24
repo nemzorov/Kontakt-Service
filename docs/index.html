@@ -46,11 +46,11 @@
             </div>
             <nav class="header__menu menu">
                 <ul class="header__list">
-                    <li><a href="#" class="header__link">услуги</a></li>
-                    <li><a href="#" class="header__link">о нас</a></li>
-                    <li><a href="#" class="header__link">оставить заявку</a></li>
+                    <li><a href="#services" class="header__link">услуги</a></li>
+                    <li><a href="#benefit" class="header__link">о нас</a></li>
+                    <li><a href="#feedback" class="header__link">оставить заявку</a></li>
                     <li><a href="#" class="header__link">отзывы</a></li>
-                    <li><a href="#" class="header__link">контакты</a></li>
+                    <li><a href="#footer" class="header__link">контакты</a></li>
                 </ul>
             </nav>
 
@@ -78,7 +78,50 @@
     </div>
 
 </section>
-			<section class="benefit">
+			<section id="services" class="services">
+    <div class="services__container">
+        <div class="services__content">
+            <div class="services__title title">
+                <span>оказываем услуги</span>
+            </div>
+            <div class="services__items">
+
+                <div class="services__arrow">
+                    <div class="arrow arrow-left">
+                        <div></div>
+                    </div>
+                </div>
+
+                <div class="services__item item-services">
+                    <a href="#" class="item-services__image"><img src="img/services/service_1.png" alt="img"></a>
+                    <div class="item-services__title">ремонт</div>
+                    <div class="item-services__subtitle">стиральных машин</div>
+                </div>
+
+                <div class="services__item item-services item-services-center">
+                    <a href="#" class="item-services__image"><img src="img/services/service_2.png" alt="img"></a>
+                    <div class="item-services__title">ремонт</div>
+                    <div class="item-services__subtitle">жк телевизоров</div>
+                </div>
+
+                <div class="services__item item-services">
+                    <a href="#" class="item-services__image"><img src="img/services/service_3.png" alt="img"></a>
+                    <div class="item-services__title">ремонт</div>
+                    <div class="item-services__subtitle">холодильников</div>
+                </div>
+
+
+                <div class="services__arrow">
+                    <div class="arrow arrow-right">
+                        <div></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+			<section id="benefit" class="benefit">
     <div class="benefit__container">
         <div class="benefit__block">
             <div class="benefit__title title">почему именно мы?</div>
@@ -128,10 +171,17 @@
 
             </div>
 
+            <p class="benefit__explanation">
+                * диагностика бесплатна только при
+                последующем ремонте устройства, в случае отказа от ремонта, стоимость диагностики будет рассчитана
+                согласно <a href="#">прайс-листу</a>.
+            </p>
+
         </div>
+
     </div>
 </section>
-			<section class="feedback">
+			<section id="feedback" class="feedback">
     <div class="feedback__container">
         <div class="feedback__row">
             <div class="feedback__block">
@@ -144,9 +194,15 @@
                             <input type="tel" autocomplete="off" placeholder="Номер телефона *" name="phone"
                                 class="form__input"></input>
                         </div>
-                        <span class="form__policy">Отправляя заявку, вы соглашаетесь с <a href="police.html"
-                                target="blank">политикой
-                                конфиденциальности</a></span>
+
+                        <span class="form__police">
+                            Отправляя заявку, вы соглашаетесь с
+                            <a href="police.html" target="blank">
+                                политикой
+                                конфиденциальности
+                            </a>
+                        </span>
+
                         <button type="submit" class="form__button button">отправить</button>
                     </form>
 
@@ -166,10 +222,10 @@
 		</div>
 		<div class="map">
     <script type="text/javascript" charset="utf-8" async
-        src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A6067ca3c3bba43ed90b495bdaee561dc0475d9e2060812ef544a3927a571eef4&amp;width=100%25&amp;height=450&amp;lang=ru_RU&amp;scroll=false">
+        src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A6067ca3c3bba43ed90b495bdaee561dc0475d9e2060812ef544a3927a571eef4&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=false">
         </script>
 </div>
-		<footer class="footer">
+		<footer id="footer" class="footer">
     <div class="footer__container">
         <div class="footer__body">
             <div class="footer__block footer__block-adress">

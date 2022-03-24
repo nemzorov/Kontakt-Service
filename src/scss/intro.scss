@@ -42,27 +42,20 @@
     }
 
     &__button {
-        flex: 0 0 auto;
-        background-color: #ee4a39;
-        padding: 20px 15px;
-        @include changeBgColorButton(#ee4a39, #eb3b27, #ad2c1d);
+        @include changeBgColorButton(#ee4a39, #ee4a39, #ff2d16, #b43426);
+        padding-top: 1.7em;
+        padding-bottom: 1.7em;
+
         @media (max-width: $pc) {
-            padding: 18px 12px;
-            font-size: 13px;
+            font-size: 0.9em;
         }
 
         @media (max-width: $mobile) {
-            padding: 15px 10px;
-            & span {
-                font-size: 12px;
-            }
+            font-size: 0.8em;
         }
 
         @media (max-width: $mobileSmall) {
-            padding: 12px 8px;
-            & span {
-                font-size: 11px;
-            }
+            font-size: 0.65em;
         }
     }
 }

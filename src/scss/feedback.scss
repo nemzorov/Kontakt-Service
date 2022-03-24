@@ -134,10 +134,8 @@
         }
     }
 
-    &__policy {
+    &__police {
         @include adaptiv-font(10, 9);
-        font-style: oblique;
-        text-align: left;
         align-self: flex-start;
         & a {
             color: #2333be;
@@ -149,12 +147,7 @@
     }
 
     &__button {
-        padding: 15px 20px;
-        @include adaptiv-font(16, 12);
-        @include changeBgColorButton(#ee4a39, #eb3b27, #ad2c1d);
-
-        @media (max-width: $mobile) {
-            padding: 10px 12px;
-        }
+        @include changeBgColorButton(#ee4a39, #ee4a39, #ff2d16, #b43426);
+        @include adaptiv-font(14, 12);
     }
 }
