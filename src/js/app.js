@@ -47,3 +47,29 @@ for (let p of spolersTitle) {
     });
 };
 // ======================== Spollers =======================
+
+
+// ======================= Button Top ======================
+const buttonTop = document.querySelector('.top-button');
+
+// скрыть кнопку
+window.addEventListener('scroll', function (e) {
+    let positionY = window.pageYOffset;
+
+    if (positionY > 300) {
+        buttonTop.classList.add('show');
+    }
+    else {
+        buttonTop.classList.remove('show');
+    }
+});
+
+// прокрутка вверх по нажатию на кнопку
+const rootElement = document.documentElement;
+buttonTop.addEventListener('click', function (e) {
+    rootElement.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    })
+});
+// ======================= Button Top ======================

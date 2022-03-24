@@ -69,7 +69,6 @@
 @media (max-width: $mobile) {
     .block-footer {
         position: relative;
-        overflow: hidden;
         &__title {
             @include adaptiv-font(20, 16);
             opacity: 0.75;
@@ -83,12 +82,14 @@
                 left: 10%;
                 background-color: #fff;
                 opacity: 0.1;
+                transform: scaleX(1);
+                transition: transform 0.2s ease 0.2s;
             }
         }
         &__content {
-            height: 0;
+            height: 0px;
             transform: scale(0);
-            transition: transform 0.2s ease 0s;
+            transition: all 0.2s ease 0s;
         }
     }
 
@@ -96,14 +97,15 @@
         .block-footer {
             &__title {
                 &::after {
-                    content: none;
+                    transform: scaleX(0);
+                    transition: transform 0.3s ease 0s;
                 }
                 opacity: 1;
             }
             &__content {
                 height: 100%;
                 transform: scale(1);
-                transition: transform 0.5s ease 0s;
+                transition: transform 0.5s ease 0.05s;
             }
         }
     }

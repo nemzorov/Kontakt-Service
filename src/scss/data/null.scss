@@ -56,7 +56,6 @@ html,
 body {
     overflow: auto;
     width: $bodyWidth;
-    height: $bodyHeight;
     line-height: $lineHeight;
     font-family: $fontFamily;
     color: $colorText;
@@ -66,6 +65,10 @@ body {
     text-align: $textAlign;
     text-transform: $textTransform;
     letter-spacing: $letterSpacing;
+}
+
+body {
+    height: $bodyHeight;
 }
 
 // -------------------------------- HEADER - MAIN - FOOTER --------------------------------
