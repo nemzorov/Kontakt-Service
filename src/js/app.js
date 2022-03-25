@@ -2,10 +2,41 @@ import * as flsFunctions from "./modules/functions.js";
 
 flsFunctions.isWebp();
 
-/*
-import Swiper, { Navigation, Pagination } from 'swiper';
-const swiper = new Swiper();
-*/
+
+// ===================== Slider Swiper =====================
+new Swiper('.services-slider', {
+    loop: true,
+    navigation: {
+        nextEl: '.arrow-right',
+        prevEl: '.arrow-left',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+        dynamicMainBullets: 1,
+    },
+    keyboard: {
+        enabled: false,
+        onlyInViewport: true,
+    },
+    // mousewheel: {
+    //     sensitivity: 1,
+    // },
+    slidesPerView: 3,
+    watcOverflow: true,
+    // spaceBetween: 50,
+    centeredSlides: true,
+    initialSlide: 2,
+    autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+    },
+    speed: 450,
+
+});
+
+// ===================== Slider Swiper =====================
 
 
 // =================== Burger settings ======================
@@ -73,3 +104,14 @@ buttonTop.addEventListener('click', function (e) {
     })
 });
 // ======================= Button Top ======================
+
+
+
+// ======================= This Year =======================
+let date = new Date();
+let thisYear = date.getFullYear();
+let thisYearShow = document.querySelector('.this-year');
+thisYearShow.insertAdjacentText('afterbegin', thisYear)
+// ======================= This Year =======================
+
+

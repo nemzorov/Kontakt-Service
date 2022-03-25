@@ -20,6 +20,7 @@
 	<meta name="description" content="Описание">
 	<meta name="google" content="notranslate" />
 
+	<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="css/style.min.css">
 	<title>Контакт / сервис</title>
 </head>
@@ -83,49 +84,100 @@
 </section>
 			<section id="services" class="services">
     <div class="services__container">
-        <div class="services__content">
 
-            <div class="services__title title">
-                <span>оказываем услуги</span>
+
+        <div class="services__title title">
+            <span>оказываем услуги</span>
+        </div>
+
+        <div class="services-slider swiper-container">
+            <div class="services-slider__wrapper swiper-wrapper">
+
+                <div class="services-slider__slide swiper-slide">
+                    <div class="services-slider__item item-services">
+                        <a href="#" class="item-services__image"><img src="img/services/service_2.png" alt="img"></a>
+                        <div class="item-services__title">ремонт</div>
+                        <div class="item-services__subtitle">жк телевизоров</div>
+                    </div>
+                </div>
+
+                <div class="services-slider__slide swiper-slide">
+                    <div class="services-slider__item item-services">
+                        <a href="#" class="item-services__image"><img src="img/services/service_2.png" alt="img"></a>
+                        <div class="item-services__title">ремонт</div>
+                        <div class="item-services__subtitle">смартфонов</div>
+                    </div>
+                </div>
+
+                <div class="services-slider__slide swiper-slide">
+                    <div class="services-slider__item item-services">
+                        <a href="#" class="item-services__image"><img src="img/services/service_2.png" alt="img"></a>
+                        <div class="item-services__title">ремонт</div>
+                        <div class="item-services__subtitle">планшетов</div>
+                    </div>
+                </div>
+
+                <div class="services-slider__slide swiper-slide">
+                    <div class="services-slider__item item-services">
+                        <a href="#" class="item-services__image"><img src="img/services/service_2.png" alt="img"></a>
+                        <div class="item-services__title">ремонт</div>
+                        <div class="item-services__subtitle">ноутбуков</div>
+                    </div>
+                </div>
+
+                <div class="services-slider__slide swiper-slide">
+                    <div class="services-slider__item item-services">
+                        <a href="#" class="item-services__image"><img src="img/services/service_2.png" alt="img"></a>
+                        <div class="item-services__title">ремонт</div>
+                        <div class="item-services__subtitle">компьютеров</div>
+                    </div>
+                </div>
+
+                <div class="services-slider__slide swiper-slide">
+                    <div class="services-slider__item item-services">
+                        <a href="#" class="item-services__image"><img src="img/services/service_2.png" alt="img"></a>
+                        <div class="item-services__title">ремонт</div>
+                        <div class="item-services__subtitle">стиральных машин</div>
+                    </div>
+                </div>
+
+                <div class="services-slider__slide swiper-slide">
+                    <div class="services-slider__item item-services">
+                        <a href="#" class="item-services__image"><img src="img/services/service_2.png" alt="img"></a>
+                        <div class="item-services__title">ремонт</div>
+                        <div class="item-services__subtitle">холодильников</div>
+                    </div>
+                </div>
+
+                <div class="services-slider__slide swiper-slide">
+                    <div class="services-slider__item item-services">
+                        <a href="#" class="item-services__image"><img src="img/services/service_2.png" alt="img"></a>
+                        <div class="item-services__title">ремонт</div>
+                        <div class="item-services__subtitle">кондиционеров</div>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="services__items">
-
-                <!-- <div class="services__arrow">
-                    <div class="arrow arrow-left">
-                        <div></div>
-                    </div>
-                </div> -->
-
-                <div class="services__item item-services">
-                    <a href="#" class="item-services__image"><img src="img/services/service_1.png" alt="img"></a>
-                    <div class="item-services__title">ремонт</div>
-                    <div class="item-services__subtitle">стиральных машин</div>
-                </div>
-
-                <div class="services__item item-services item-services-center">
-                    <a href="#" class="item-services__image"><img src="img/services/service_2.png" alt="img"></a>
-                    <div class="item-services__title">ремонт</div>
-                    <div class="item-services__subtitle">жк телевизоров</div>
-                </div>
-
-                <div class="services__item item-services">
-                    <a href="#" class="item-services__image"><img src="img/services/service_3.png" alt="img"></a>
-                    <div class="item-services__title">ремонт</div>
-                    <div class="item-services__subtitle">холодильников</div>
-                </div>
 
 
-                <!-- <div class="services__arrow">
-                    <div class="arrow arrow-right">
-                        <div></div>
-                    </div>
-                </div> -->
+        </div>
 
-            </div> <!-- services__items -->
+        <div class="services__pagination">
+            <div class="swiper-pagination"></div>
+        </div>
 
-        </div> <!-- services__content -->
+        <div class="services__arrow">
+            <div class="arrow arrow-left">
+                <div></div>
+            </div>
+            <div class="arrow arrow-right">
+                <div></div>
+            </div>
+        </div>
+
     </div> <!-- services__container -->
+
 </section>
 			<section id="benefit" class="benefit">
     <div class="benefit__container">
@@ -245,9 +297,10 @@
                 </div>
             </div>
 
-            <div class="footer__block footer__block-social block-footer">
-                <h4 class="footer__title block-footer__title">Мы в соц. сетях</h4>
-                <div class="block-footer__content">
+            <div class="footer__block footer__block-social block-footer-statick">
+                <!-- to open spoller delete " -statick " -->
+                <h4 class="footer__title block-footer-statick__title">Мы в соц. сетях</h4>
+                <div class="block-footer-statick__content">
                     <div class="footer__social social">
 
                         <a class="social__item" href="https://vk.com/kontakt_43" target="_blank">
@@ -286,12 +339,13 @@
     </div>
     <div class="copyright">
         <div class="copyright__text">
-            <div>Copyright © 2016-2022 Все права защищены</div>
+            <div>Copyright © 2016-<span class="this-year"></span> Все права защищены</div>
             <div><span>ИП Немзоров Максим Андреевич</span></div>
         </div>
     </div>
 </footer>
 	</div>
+	<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 	<script src="js/app.min.js"></script>
 	<script>
     window.replainSettings = { id: '8cebbc00-1669-4460-919f-b3caa954d3ef' };

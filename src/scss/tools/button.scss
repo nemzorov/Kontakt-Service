@@ -18,6 +18,10 @@
     border-radius: 0.4em;
 
     transition: all 0.5s ease 0s;
+
+    & span {
+        cursor: pointer;
+    }
 }
 
 @mixin changeBgColorButton($btColor, $btShadow, $btHoverColor, $btActiveColor, $btTextColor: #fff) {

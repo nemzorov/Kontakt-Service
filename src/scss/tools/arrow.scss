@@ -1,19 +1,32 @@
 .arrow {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    position: relative;
+    position: absolute;
     width: 80px;
     height: 50px;
-    margin: 20px;
+    z-index: 10;
+    top: 50%;
 }
 
 .arrow-left {
-    justify-content: flex-start;
+    left: 3%;
+    right: auto;
+    @media (min-width: 1600px) {
+        left: 10%;
+    }
 }
 
 .arrow-right {
-    justify-content: center;
+    right: 3%;
+    left: auto;
+    @media (min-width: 1600px) {
+        right: 10%;
+    }
+}
+
+.arrow div {
+    height: 100%;
+    &:focus {
+        outline: none;
+    }
 }
 
 .arrow div::after {
@@ -23,6 +36,7 @@
     height: 10px;
     top: 9px;
     background-color: #e76b05;
+    transform: rotate(-45deg);
 }
 
 .arrow div::before {
@@ -33,52 +47,19 @@
     top: 31px;
     background-color: #e76b05;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-}
-
-.arrow-left div::after {
-    transform: rotate(-45deg);
-}
-
-.arrow-left div::before {
     transform: rotate(45deg);
 }
 
-.arrow-right div::after {
-    transform: rotate(45deg);
-}
-
-.arrow-right div::before {
-    transform: rotate(-45deg);
+.arrow-right div {
+    transform: rotate(180deg);
 }
 
 .arrow-right:active {
-    animation: arrow-right 1s linear infinite;
+    transform: translateX(5px);
+    transition: transform 0.1s ease 0s;
 }
 
 .arrow-left:active {
-    animation: arrow-left 1s linear infinite;
-}
-
-@keyframes arrow-left {
-    0% {
-        left: 0;
-    }
-    50% {
-        left: -10px;
-    }
-    100% {
-        left: 0;
-    }
-}
-
-@keyframes arrow-right {
-    0% {
-        left: 0;
-    }
-    50% {
-        left: 10px;
-    }
-    100% {
-        left: 0;
-    }
+    transform: translateX(-5px);
+    transition: transform 0.1s ease 0s;
 }
