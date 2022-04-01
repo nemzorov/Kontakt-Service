@@ -11,7 +11,7 @@ new Swiper('.services-slider', {
         prevEl: '.arrow-left',
     },
     pagination: {
-        el: '.swiper-pagination',
+        el: '.pagin1',
         clickable: true,
         dynamicBullets: true,
         dynamicMainBullets: 1,
@@ -35,6 +35,52 @@ new Swiper('.services-slider', {
     speed: 450,
 
 });
+
+new Swiper('.reviews__swiper', {
+    loop: true,
+    spaceBetween: 50,
+    slidesPerView: 3,
+    initialSlide: 2,
+    speed: 1000,
+
+    navigation: {
+        nextEl: '.reviews__arrow-right',
+        prevEl: '.reviews__arrow-left',
+    },
+
+    pagination: {
+        el: '.reviews__pagination',
+        clickable: true,
+        dynamicBullets: true,
+        dynamicMainBullets: 1,
+    },
+
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: true,
+    },
+    breakpoints: {
+        300: {
+            slidesPerView: 1,
+        },
+        480: {
+            slidesPerView: 1.2,
+        },
+        768: {
+            slidesPerView: 2,
+        },
+        992: {
+            slidesPerView: 2.3,
+        },
+        1200: {
+            slidesPerView: 3,
+        },
+    }
+
+
+});
+
+
 
 // ===================== Slider Swiper =====================
 
@@ -113,5 +159,7 @@ let thisYear = date.getFullYear();
 let thisYearShow = document.querySelector('.this-year');
 thisYearShow.insertAdjacentText('afterbegin', thisYear)
 // ======================= This Year =======================
+
+
 
 

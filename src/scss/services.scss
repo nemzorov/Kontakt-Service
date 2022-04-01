@@ -4,22 +4,7 @@
     padding: 50px 0px 90px;
 
     &__title {
-        position: relative;
-        font-style: normal;
-        font-weight: 500;
-        @include adaptiv-font(25, 18);
-        line-height: 43px;
-        margin: 0px 0px 70px 0px;
-
-        &::after {
-            content: "";
-            background-color: #f28c2e;
-            height: 2px;
-            width: 10%;
-            position: absolute;
-            bottom: -10px;
-            left: 45%;
-        }
+        margin: 0px 0px 50px 0px;
     }
 
     &__pagination {

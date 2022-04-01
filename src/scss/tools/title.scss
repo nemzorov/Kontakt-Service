@@ -4,4 +4,19 @@
     text-align: center;
     text-transform: uppercase;
     color: #000000;
+
+    position: relative;
+    font-style: normal;
+    @include adaptiv-font(25, 18);
+    line-height: 43px;
+
+    &::after {
+        content: "";
+        background-color: #f28c2e;
+        height: 2px;
+        width: 10%;
+        position: absolute;
+        bottom: -10px;
+        left: 45%;
+    }
 }

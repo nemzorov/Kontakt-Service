@@ -354,6 +354,28 @@ body.lock {
   text-align: center;
   text-transform: uppercase;
   color: #000000;
+  position: relative;
+  font-style: normal;
+  line-height: 43px;
+}
+@media (max-width: 767.98px) {
+  .title {
+    font-size: calc(18px + 11.9 * ((100vw - 320px) / 1330));
+  }
+}
+@media (min-width: 767.98px) {
+  .title {
+    font-size: calc(18px + 7 * (100vw / 1330));
+  }
+}
+.title::after {
+  content: "";
+  background-color: #f28c2e;
+  height: 2px;
+  width: 10%;
+  position: absolute;
+  bottom: -10px;
+  left: 45%;
 }
 
 .top-button.show {
@@ -783,6 +805,9 @@ body.lock {
     margin: 0px 0px 20px 0px;
   }
 }
+.benefit__title::after {
+  content: none;
+}
 .benefit__items {
   display: flex;
   justify-content: center;
@@ -853,36 +878,149 @@ body.lock {
   text-transform: uppercase;
 }
 
+@keyframes arrowGo {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    transform: translate(-30%, -50%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+.question {
+  background-color: #ffc0611a;
+  padding: 80px 0px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+@media (max-width: 991.98px) {
+  .question {
+    display: none;
+  }
+}
+.question__title {
+  margin: 0px 0px 90px 0px;
+}
+.question__items {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 70px;
+}
+.question__item {
+  min-width: 33.333%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.question__arrow {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 50px;
+  transform: translate(-50%, -50%);
+  animation: arrowGo 2.3s ease-in-out infinite;
+}
+@media (max-width: 1199.98px) {
+  .question__arrow {
+    width: 30px;
+  }
+}
+
+.item-question__images {
+  position: relative;
+}
+.item-question__image {
+  max-width: 200px;
+}
+.item-question__image img {
+  width: 100%;
+}
+@media (max-width: 1199.98px) {
+  .item-question__image {
+    max-width: 150px;
+  }
+}
+.item-question__icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.item-question__description {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px 0px 0px 0px;
+  max-width: 60%;
+  padding: 10px 5px;
+  border-radius: 5px;
+  background-color: #ffffff80;
+  box-shadow: 2px 3px 5px #0000001a;
+}
+.item-question__text {
+  text-align: center;
+  line-height: 1.2;
+}
+@media (max-width: 767.98px) {
+  .item-question__text {
+    font-size: calc(10px + 10.2 * ((100vw - 320px) / 1330));
+  }
+}
+@media (min-width: 767.98px) {
+  .item-question__text {
+    font-size: calc(10px + 6 * (100vw / 1330));
+  }
+}
+.item-question__text span {
+  color: #e7740b;
+  font-weight: 700;
+}
+.item-question__button {
+  margin: 10px 30px 0px;
+  font-size: 0.65em;
+  color: #fff;
+  background-color: #ee4a39;
+  box-shadow: 0px 0px 0.25em #ee4a39;
+}
+@media (min-width: 991.98px) {
+  .item-question__button:hover {
+    background-color: #ff2e17;
+  }
+  .item-question__button:active {
+    background-color: #a5382c;
+    box-shadow: 0px 0px 0px 0px;
+    transition: all 0s ease 0s;
+  }
+  .item-question__button:active span {
+    opacity: 0.7;
+  }
+}
+@media (max-width: 1199.98px) {
+  .item-question__button {
+    font-size: 0.6em;
+  }
+}
+@media (max-width: 767.98px) {
+  .item-question__button {
+    font-size: 0.5em;
+  }
+}
+@media (max-width: 479.98px) {
+  .item-question__button {
+    font-size: 0.4em;
+  }
+}
+
 .services {
   position: relative;
   background-color: #fff9ef;
   padding: 50px 0px 90px;
 }
 .services__title {
-  position: relative;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 43px;
-  margin: 0px 0px 70px 0px;
-}
-@media (max-width: 767.98px) {
-  .services__title {
-    font-size: calc(18px + 11.9 * ((100vw - 320px) / 1330));
-  }
-}
-@media (min-width: 767.98px) {
-  .services__title {
-    font-size: calc(18px + 7 * (100vw / 1330));
-  }
-}
-.services__title::after {
-  content: "";
-  background-color: #f28c2e;
-  height: 2px;
-  width: 10%;
-  position: absolute;
-  bottom: -10px;
-  left: 45%;
+  margin: 0px 0px 50px 0px;
 }
 .services__pagination {
   position: relative;
@@ -962,6 +1100,137 @@ body.lock {
 @media (min-width: 767.98px) {
   .item-services__subtitle {
     font-size: calc(10px + 8 * (100vw / 1330));
+  }
+}
+
+.reviews {
+  position: relative;
+  z-index: 5;
+  background-color: #f6f6f6;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 35px 0px 40px;
+}
+.reviews__container {
+  position: relative;
+}
+@media (max-width: 991.98px) {
+  .reviews__title::after {
+    content: none;
+  }
+}
+.reviews__wrapper {
+  padding: 0px 30px;
+}
+@media (max-width: 1199.98px) {
+  .reviews__wrapper {
+    padding: 0px;
+  }
+}
+.reviews__swiper {
+  padding: 0px 30px;
+}
+.reviews__items {
+  margin-bottom: 40px;
+}
+.reviews__arrow {
+  transition: transform 0.3s ease 0s;
+}
+.reviews__arrow::after {
+  cursor: pointer;
+}
+@media (max-width: 1199.98px) {
+  .reviews__arrow {
+    display: none;
+  }
+}
+.reviews__arrow:hover {
+  transition: transform 0.3s ease 0s;
+}
+@media (min-width: 991.98px) {
+  .reviews__arrow:hover {
+    transform: scale(1.2);
+  }
+}
+.item-reviews__photo {
+  background: #ffffff;
+  position: relative;
+  left: 50%;
+  top: 75px;
+  width: 150px;
+  height: 150px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%);
+}
+@media (max-width: 1199.98px) {
+  .item-reviews__photo {
+    width: 120px;
+    height: 120px;
+    top: 60px;
+  }
+}
+.item-reviews__img {
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  cursor: pointer;
+  box-shadow: 0px 0px 2px 1px #999898;
+}
+.item-reviews__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 90px 40px 25px;
+  height: 360px;
+}
+.item-reviews__empty {
+  opacity: 0;
+}
+.item-reviews__text {
+  position: relative;
+  top: 0;
+  left: 0;
+  line-height: 1.2;
+  text-align: center;
+  z-index: 1;
+}
+@media (max-width: 767.98px) {
+  .item-reviews__text {
+    font-size: calc(12px + 6.8 * ((100vw - 320px) / 1330));
+  }
+}
+@media (min-width: 767.98px) {
+  .item-reviews__text {
+    font-size: calc(12px + 4 * (100vw / 1330));
+  }
+}
+.item-reviews__text p {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0%, -55%);
+}
+.item-reviews__name {
+  position: relative;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 2;
+}
+@media (max-width: 767.98px) {
+  .item-reviews__name {
+    font-size: calc(15px + 3.4 * ((100vw - 320px) / 1330));
+  }
+}
+@media (min-width: 767.98px) {
+  .item-reviews__name {
+    font-size: calc(15px + 2 * (100vw / 1330));
   }
 }
 
@@ -1098,6 +1367,9 @@ body.lock {
   .form__title {
     font-size: calc(16px + 9 * (100vw / 1330));
   }
+}
+.form__title::after {
+  content: none;
 }
 .form__inputs {
   display: flex;

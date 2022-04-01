@@ -107,6 +107,9 @@
 
     &__title {
         @include adaptiv-font(25, 16);
+        &::after {
+            content: none;
+        }
     }
 
     &__inputs {
