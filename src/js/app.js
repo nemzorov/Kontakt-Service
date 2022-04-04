@@ -4,35 +4,48 @@ flsFunctions.isWebp();
 
 
 // ===================== Slider Swiper =====================
-new Swiper('.services-slider', {
+new Swiper('.services__swiper', {
     loop: true,
+    spaceBetween: 50,
+    slidesPerView: 3,
+    initialSlide: 2,
+    speed: 1000,
+    centeredSlides: true,
+
     navigation: {
-        nextEl: '.arrow-right',
-        prevEl: '.arrow-left',
+        nextEl: '.services__arrow-right',
+        prevEl: '.services__arrow-left',
     },
+
     pagination: {
-        el: '.pagin1',
+        el: '.services__pagination',
         clickable: true,
         dynamicBullets: true,
         dynamicMainBullets: 1,
     },
-    keyboard: {
-        enabled: false,
-        onlyInViewport: true,
-    },
-    // mousewheel: {
-    //     sensitivity: 1,
-    // },
-    slidesPerView: 3,
-    watcOverflow: true,
-    // spaceBetween: 50,
-    centeredSlides: true,
-    initialSlide: 2,
+
     autoplay: {
-        delay: 2000,
-        disableOnInteraction: false,
+        delay: 5000,
+        disableOnInteraction: true,
     },
-    speed: 450,
+    breakpoints: {
+        300: {
+            slidesPerView: 1,
+        },
+        480: {
+            slidesPerView: 1.2,
+        },
+        768: {
+            slidesPerView: 2,
+        },
+        992: {
+            slidesPerView: 2.3,
+        },
+        1200: {
+            slidesPerView: 3,
+        },
+    }
+
 
 });
 
