@@ -42,6 +42,7 @@ new Swiper('.reviews__swiper', {
     slidesPerView: 3,
     initialSlide: 2,
     speed: 1000,
+    centeredSlides: true,
 
     navigation: {
         nextEl: '.reviews__arrow-right',
